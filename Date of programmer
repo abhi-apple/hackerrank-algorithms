@@ -1,0 +1,52 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int year;
+
+    cin >> year;
+    int st;
+    if (year % 4 == 0)
+    {
+        if (year % 100 == 0)
+        {
+            if (year % 400 == 0)
+                // cout << year << " is a leap year.";
+                st = 1;
+            else if (year < 1918)
+            {
+                st = 1;
+            }
+            else{
+                st=0;
+            }
+        }
+        else
+            // cout << year << " is a leap year.";
+            st = 1;
+    }
+    else
+        // cout << year << " is not a leap year.";
+        st = 0;
+
+    int date = 12;
+    int mon = 9;
+    if (st == 1)
+    {
+        cout << date << "." ;
+       cout<< setw(2) << setfill('0') << mon << "." << year;
+       
+    }
+    else if(year==1918){
+        cout << date+14 << "." ;
+       cout<< setw(2) << setfill('0') << mon << "." << year;
+    }
+    else
+    {
+        cout << (date + 1) << "." ;
+       cout<< setw(2) << setfill('0') << mon << "." << year;
+    }
+
+    return 0;
+}
