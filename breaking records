@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int scores[1000];
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>scores[i];
+    }
+    int max;
+    int min;
+    max=scores[0];
+    min=scores[0];
+    int icount=0;
+    int acount=0;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(scores[j]>max){
+                max=scores[j];
+                acount=acount+1;
+            }
+        }
+        for(int k=0;k<n;k++){
+            if(min>scores[k]){
+                min=scores[k];
+                icount=icount+1;
+            }
+        }
+    }
+    cout<<acount<<" "<<icount;
+    return 0;
+}
