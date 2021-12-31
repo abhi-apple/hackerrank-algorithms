@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int items;
+    int miss;
+    int arr[100000];
+    cin>>items;
+    cin>>miss;
+    for(int i=0;i<items;i++){
+        cin>>arr[i];
+    }
+    int pay;
+    cin>>pay;
+    int sum=0;
+    for(int i=0;i<items;i++){
+        sum=sum+arr[i];
+    }
+    
+    int tot=sum/2 ;
+    if(tot==pay){
+        cout<<arr[miss]/2;
+    }else{
+        cout<<"Bon Appetit ";
+    }
+
+}
